@@ -3,15 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package libreria;
+
 /**
- *
- * @author leonor
+ * Clase principal que ejecuta la aplicación de la librería.
+ * Permite comprar libros y administrar el saldo del usuario.
+ * 
+ * @author Leonor
  */
 public class Main {
-    /**
-     * @param args the command line arguments
-     */
 
+    /**
+     * Método principal que inicia el programa.
+     * @param args Argumentos de la línea de comandos.
+     */
     public static void main(String[] args) {
         miLibreriaMilanValverdeRobertoCarlos2425T4 miLibreriaXXX;
         String x;
@@ -21,41 +25,46 @@ public class Main {
         double saldoActual; 
         double ingreso;
         
+        // Crear un objeto de la librería con un libro específico
         miLibreriaXXX = new miLibreriaMilanValverdeRobertoCarlos2425T4("Don Quijote de la Mancha", 10, 45, 120);
 
-        try 
-        {
+        try {
             x = "Don Quijote de la Mancha";
-            num = 2;    //Número de ejemplares a comprar
+            num = 2;    // Número de ejemplares a comprar
             dinero = miLibreriaXXX.obtenerPrecio();
             saldoActual = miLibreriaXXX.obtenerSaldo();
-            System.out.println("El libro "+x+" vale "+dinero+"€");
-            System.out.println("Tu saldo actual es de "+saldoActual+"€");
+            
+            System.out.println("El libro " + x + " vale " + dinero + "€");
+            System.out.println("Tu saldo actual es de " + saldoActual + "€");
+
             miLibreriaXXX.comprarLibro(num);
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("Error en la compra del libro");
         }
         
         saldoActual = miLibreriaXXX.obtenerSaldo();
-        System.out.println("El saldo al comprar el libro es de "+ saldoActual );        
+        System.out.println("El saldo al comprar el libro es de " + saldoActual);        
+
         x = miLibreriaXXX.obtenerNombre();
         stock = miLibreriaXXX.obtenerStock();
-        System.out.println("El libro "+x+" tiene un stock de "+stock+" unidades");
-        
-        try
-        {
+        System.out.println("El libro " + x + " tiene un stock de " + stock + " unidades");
+
+        try {
             ingreso = 30.5;
             miLibreriaXXX.aumentarSaldo(ingreso);
             saldoActual = miLibreriaXXX.obtenerSaldo();
-            System.out.println("Tu saldo actual después de ingresar es de "+saldoActual+"€");
-        } catch (Exception e)
-        {
+            System.out.println("Tu saldo actual después de ingresar es de " + saldoActual + "€");
+        } catch (Exception e) {
             System.out.println("Fallo al obtener el saldo al ingresar");
         }
-    
     }
-        
+    
+    /**
+     * Realiza la compra de un libro en la librería.
+     * 
+     * @param miLibreria Objeto de la librería.
+     * @param num Cantidad de ejemplares a comprar.
+     */
     public static void compraQuijoteMilanValverdeRobertoCarlos2425T4(
         miLibreriaMilanValverdeRobertoCarlos2425T4 miLibreria, int num) {
 
@@ -72,10 +81,14 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Error en la compra del libro: " + e.getMessage());
         }
-    } 
-    
-    
-    
+    }
+
+    /**
+     * Añade saldo a la cuenta de la librería.
+     * 
+     * @param miLibreria Objeto de la librería.
+     * @param ingreso Monto de dinero a ingresar.
+     */
     public static void añadeIngresoMilanValverdeRobertoCarlos2425T4(
         miLibreriaMilanValverdeRobertoCarlos2425T4 miLibreria, double ingreso) {
 
@@ -86,8 +99,14 @@ public class Main {
             System.out.println("Fallo al ingresar saldo: " + e.getMessage());
         }
     }
-    
-    
+
+    /**
+     * Añade saldo a la cuenta de la librería con un concepto asociado.
+     * 
+     * @param miLibreria Objeto de la librería.
+     * @param ingreso Monto de dinero a ingresar.
+     * @param concepto Descripción del motivo del ingreso.
+     */
     public static void añadeIngresoMilanValverdeRobertoCarlos2425T4(
         miLibreriaMilanValverdeRobertoCarlos2425T4 miLibreria, double ingreso, String concepto) {
 
@@ -99,6 +118,4 @@ public class Main {
             System.out.println("Fallo al ingresar saldo: " + e.getMessage());
         }
     }
-
-    
 }
