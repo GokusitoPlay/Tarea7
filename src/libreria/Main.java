@@ -18,7 +18,7 @@ public class Main {
         int stock;
         int num;
         double dinero;
-        double saldoActual;
+        double saldoActual; 
         double ingreso;
         
         miLibreriaXXX = new miLibreriaMilanValverdeRobertoCarlos2425T4("Don Quijote de la Mancha", 10, 45, 120);
